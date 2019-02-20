@@ -33,6 +33,9 @@
           }, {
             id: '002',
             url: 'http://img1.qunarzz.com/piao/fusion/1708/b7/315e9d62dd1e8e02.jpg_890x330_cf0c41ca.jpg'
+          }, {
+            id: '003',
+            url: 'http://img1.qunarzz.com/piao/fusion/1711/fb/de32080b7db0fe02.jpg_890x330_0c79691b.jpg'
           }
         ]
       }
@@ -56,7 +59,7 @@
     overflow hidden
     width 100%
     height 0
-    padding-bottom 31.25%
+    padding-bottom 31.75%
     background-color #eee
     .carousel-img
       width 100%
