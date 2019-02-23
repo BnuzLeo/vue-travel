@@ -1,10 +1,10 @@
 <template>
   <div>
-    <home-header></home-header>
-    <home-carousel></home-carousel>
-    <home-icon></home-icon>
-    <recommend></recommend>
-    <weekend></weekend>
+    <home-header :city="city"></home-header>
+    <home-carousel :list="swiperList"></home-carousel>
+    <home-icon :list="iconList"></home-icon>
+    <recommend :list="recommendList"></recommend>
+    <weekend :list="weekendList"></weekend>
   </div>
 </template>
 
@@ -14,10 +14,41 @@
   import HomeIcon from './components/Icon'
   import Recommend from './components/Recommend'
   import Weekend from './components/Weekend'
+  import axios from 'axios'
 
   export default {
     name: "Home",
-    components: {homeHeader,HomeCarousel,HomeIcon,Recommend,Weekend}
+    components: {homeHeader,HomeCarousel,HomeIcon,Recommend,Weekend},
+    data(){
+      return{
+        city:'',
+        iconList: [],
+        swiperList: [],
+        recommendList: [],
+        weekendList: []
+      }
+    },
+    methods:{
+      initHomeDate: function () {
+        axios.request('/api/index.json')
+          .then(this.init)
+      },
+      init: function (res) {
+        console.log(res)
+        res = res.data
+        if (res.ret === true && res.data) {
+          var data = res.data
+          this.city = data.city;
+          this.iconList = data.iconList
+          this.swiperList = data.swiperList
+          this.recommendList = data.recommendList
+          this.weekendList = data.weekendList
+        }
+      }
+    },
+    mounted(){
+      this.initHomeDate();
+    }
   }
 </script>
 

@@ -2,8 +2,8 @@
   <div>
     <div class="title">景点介绍</div>
     <ul>
-      <li class="item border-bottom" v-for="(item, index) of itemList">
-        <img :src="item.url"
+      <li class="item border-bottom" v-for="(item, index) of list">
+        <img :src="item.imgUrl"
              class="item-icon">
         <div class="item-info">
           <p class="item-title">{{item.title}}</p>
@@ -18,26 +18,8 @@
 <script>
   export default {
     name: "Recommend",
-    data(){
-      return{
-        itemList:[{
-          title:'珠海长隆海洋王国',
-          desc:'大型鲸鲨展馆，超长飞行过山车',
-          url:'http://img1.qunarzz.com/sight/p0/1503/b4/b4834f16bc8f8091.water.jpg_200x200_be5f7395.jpg'
-        },{
-          title:'海泉湾温泉',
-          desc:'多种异域风情温泉泡起来',
-          url:'http://img1.qunarzz.com/sight/p0/201403/07/a5397cc9bd4936d128924aa172044314.jpg_200x200_8ef21dea.jpg'
-        },{
-          title:'珠海御温泉',
-          desc:'这里最近很火哦，好多人都在点评它呢！',
-          url:'http://img1.qunarzz.com/sight/p0/1603/e9/e9727ce75946b9fe90.water.jpg_200x200_57baa1df.jpg'
-        },{
-          title:'珠海石景山公园',
-          desc:'体验不一样的丛林刺激风光',
-          url:'http://img1.qunarzz.com/sight/p0/1603/7f/7fff3d99c5ce8ea390.water.jpg_200x200_94d4a847.jpg'
-        }]
-      }
+    props:{
+      list: Array
     }
   }
 </script>

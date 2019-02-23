@@ -1,10 +1,10 @@
 <template>
   <div class="icons">
-    <swiper>
+    <swiper :options="swiperOption">
       <swiper-slide v-for="(page,index) of pages" :key="index">
         <div class="icon" v-for="(item,index) of page" :key="index">
           <div class="icon-img">
-            <img class="icon-img-content" :src='item.src'>
+            <img class="icon-img-content" :src='item.imgUrl'>
           </div>
           <p class="icon-desc">{{item.desc}}</p>
         </div>
@@ -16,53 +16,20 @@
 <script>
   export default {
     name: "HomeIcon",
-    data() {
-      return {
-        iconsList: [
-          {
-            id: '001',
-            src: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-            desc: '景点门票'
-          }, {
-            id: '002',
-            src: 'http://img1.qunarzz.com/piao/fusion/1804/5a/13ceb38dcf262f02.png',
-            desc: '一日游'
-          }, {
-            id: '003',
-            src: 'http://img1.qunarzz.com/piao/fusion/1804/ff/fdf170ee89594b02.png',
-            desc: '珠海必去'
-          }, {
-            id: '004',
-            src: 'http://img1.qunarzz.com/piao/fusion/1803/50/26ffa31b56646402.png',
-            desc: '海洋馆'
-          }, {
-            id: '005',
-            src: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-            desc: '景点门票'
-          }, {
-            id: '006',
-            src: 'http://img1.qunarzz.com/piao/fusion/1804/5a/13ceb38dcf262f02.png',
-            desc: '一日游'
-          }, {
-            id: '007',
-            src: 'http://img1.qunarzz.com/piao/fusion/1804/ff/fdf170ee89594b02.png',
-            desc: '珠海必去'
-          }, {
-            id: '008',
-            src: 'http://img1.qunarzz.com/piao/fusion/1803/50/26ffa31b56646402.png',
-            desc: '海洋馆'
-          }, {
-            id: '009',
-            src: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-            desc: '景点门票'
-          },
-        ]
+    props:{
+      list: Array
+    },
+    data(){
+      return{
+        swiperOption:{
+          auto: false
+        }
       }
     },
     computed: {
       pages() {
         const pages = []
-        this.iconsList.forEach(function (item, index) {
+        this.list.forEach(function (item, index) {
           const page = Math.floor(index / 8);
           if (!pages[page]) {
             pages[page] = []
