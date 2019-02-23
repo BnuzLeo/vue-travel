@@ -45,9 +45,8 @@
 <style scoped lang="stylus">
   @import "~@/assets/styles/mixins.styl"
   .title
-    padding .1rem
     margin-top .2rem
-    line-height .6rem
+    line-height .8rem
     background-color: #eee
   .item
     overflow hidden
@@ -63,8 +62,7 @@
       min-width 0 /*解决超长省略号的情况*/
       .item-title
         line-height .54rem
-        font-size .27rem
-        font-weight bold
+        font-size .32rem
         ellipsis()
       .item-desc
         line-height .4rem
