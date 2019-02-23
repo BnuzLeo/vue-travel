@@ -24,35 +24,35 @@
             src: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
             desc: '景点门票'
           }, {
-            id: '001',
+            id: '002',
+            src: 'http://img1.qunarzz.com/piao/fusion/1804/5a/13ceb38dcf262f02.png',
+            desc: '一日游'
+          }, {
+            id: '003',
+            src: 'http://img1.qunarzz.com/piao/fusion/1804/ff/fdf170ee89594b02.png',
+            desc: '珠海必去'
+          }, {
+            id: '004',
+            src: 'http://img1.qunarzz.com/piao/fusion/1803/50/26ffa31b56646402.png',
+            desc: '海洋馆'
+          }, {
+            id: '005',
             src: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
             desc: '景点门票'
           }, {
-            id: '001',
-            src: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-            desc: '景点门票'
+            id: '006',
+            src: 'http://img1.qunarzz.com/piao/fusion/1804/5a/13ceb38dcf262f02.png',
+            desc: '一日游'
           }, {
-            id: '001',
-            src: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-            desc: '景点门票'
+            id: '007',
+            src: 'http://img1.qunarzz.com/piao/fusion/1804/ff/fdf170ee89594b02.png',
+            desc: '珠海必去'
           }, {
-            id: '001',
-            src: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-            desc: '景点门票'
+            id: '008',
+            src: 'http://img1.qunarzz.com/piao/fusion/1803/50/26ffa31b56646402.png',
+            desc: '海洋馆'
           }, {
-            id: '001',
-            src: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-            desc: '景点门票'
-          }, {
-            id: '001',
-            src: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-            desc: '景点门票'
-          }, {
-            id: '001',
-            src: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-            desc: '景点门票'
-          }, {
-            id: '001',
+            id: '009',
             src: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
             desc: '景点门票'
           },
