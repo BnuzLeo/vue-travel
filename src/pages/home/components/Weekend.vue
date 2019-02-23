@@ -26,7 +26,7 @@
 </script>
 
 <style scoped lang="stylus">
-  @import "~@/assets/styles/mixins.styl"
+  @import "~styl/mixins.styl"
   .title
     padding .1rem
     margin-top .2rem

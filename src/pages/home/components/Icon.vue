@@ -43,7 +43,7 @@
 </script>
 
 <style lang="stylus" scoped>
-  @import "~@/assets/styles/mixins.styl"
+  @import "~styl/mixins.styl"
   .icons >>> .swiper-wrapper
     width 100%
     height 0
