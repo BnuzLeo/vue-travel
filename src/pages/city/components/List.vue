@@ -17,7 +17,7 @@
           </div>
         </div>
       </div>
-      <div class="area" v-for="(item,index) of lists" :key="index">
+      <div class="area" v-for="(item,index) of lists" :key="index" :ref="index">
         <div class="title">{{index}}</div>
         <div class="item-list" v-for="(citieitems,index) of item" :key="index">
           <div class="item border-bottom">
@@ -36,10 +36,19 @@
     name: "List",
     props: {
       lists: Object,
-      hots: Array
+      hots: Array,
+      letter: String
     },
     mounted() {
-      const scroll = new BScroll(this.$refs.wrapper)
+      this.scroll = new BScroll(this.$refs.wrapper)
+    },
+    watch: {
+      letter() {
+        const itemElement = this.$refs[this.letter][0]
+        if (itemElement) {
+          this.scroll.scrollToElement(itemElement);
+        }
+      }
     }
   }
 </script>
