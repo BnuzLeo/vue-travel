@@ -6,7 +6,7 @@
     <div class="search-context" v-show="inputContext" ref="searchResults">
       <ul class="search-context-list">
         <li class="search-item border-bottom" v-for="(item,index) of this.results" @click="selectCity(item.name)">{{item.name}}</li>
-        <li class="search-item border-bottom" v-show="hasNoData">找不到相关数据</li>
+        <li class="search-item border-bottom" v-show="hasNoData">{{this.getDoubleCity}}</li>
       </ul>
     </div>
   </div>
@@ -14,6 +14,7 @@
 
 <script>
   import BSroll from 'better-scroll'
+  import { mapMutations,mapGetters } from 'vuex'
   export default {
     name: "Search",
     props: {
@@ -32,7 +33,8 @@
     computed:{
       hasNoData(){
         return !this.result
-      }
+      },
+      ...mapGetters(['getDoubleCity'])
     },
     watch: {
       inputContext() {
@@ -55,9 +57,10 @@
     },
     methods:{
       selectCity(cityName){
-        this.$store.commit('initCity',cityName)
+        this.initCity(cityName)
         this.$router.push('/')
-      }
+      },
+      ...mapMutations(['initCity'])
     }
   }
 </script>
