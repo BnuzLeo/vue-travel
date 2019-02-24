@@ -1,5 +1,6 @@
 <template>
-    <div class="list">
+  <div class="list" ref="wrapper">
+    <div>
       <div class="area">
         <div class="title">当前城市</div>
         <div class="button-list border-topbottom">
@@ -63,12 +64,18 @@
         </div>
       </div>
     </div>
+  </div>
 </template>
 
 <script>
-    export default {
-        name: "List"
+  import BScroll from 'better-scroll'
+
+  export default {
+    name: "List",
+    mounted(){
+      const scroll = new BScroll(this.$refs.wrapper)
     }
+  }
 </script>
 
 <style lang="stylus" scoped>
@@ -79,9 +86,11 @@
       background-color #ccc
     &:after
       background-color #ccc
+
   .border-bottom
     &:before
       background-color #ccc
+
   .list
     overflow hidden
     position absolute
