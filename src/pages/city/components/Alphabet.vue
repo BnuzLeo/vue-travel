@@ -24,8 +24,13 @@
     },
     data() {
       return {
-        moveStatus: false
+        moveStatus: false,
+        timer: null,
+        startY: 0
       }
+    },
+    updated() {
+      this.startY = this.$refs['A'][0].offsetTop;
     },
     computed: {
       letters() {
@@ -48,19 +53,26 @@
       },
       handleTouchMove(e) {
         if (this.moveStatus) {
-          const startY = this.$refs['A'][0].offsetTop
-          const endY = e.touches[0].clientY - 79
-          const index = Math.floor((endY - startY) / 20)
-          if (index >= 0 && index < this.letters.length){
-            this.$emit('change', this.letters[index])
+          /*如果在timer还没有执行的时候，又监听到了方法的改动，那就不执行之前的timer了*/
+          if (this.timer) {
+            clearTimeout(this.timer)
           }
+          /*监听到方法之后，16毫秒之后再执行*/
+          this.timer = setTimeout(() => {
+            const endY = e.touches[0].clientY - 79;
+            const index = Math.floor((endY - this.startY) / 20)
+            if (index >= 0 && index < this.letters.length) {
+              this.$emit('change', this.letters[index])
+            }
+          },16)
         }
       },
       handleTouchEnd() {
         this.moveStatus = false
       }
     }
-  };
+  }
+  ;
 </script>
 
 <style lang="stylus" scoped>
