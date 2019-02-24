@@ -1,6 +1,6 @@
 <template>
   <div>
-    <home-header :city="city"></home-header>
+    <home-header></home-header>
     <home-carousel :list="swiperList"></home-carousel>
     <home-icon :list="iconList"></home-icon>
     <recommend :list="recommendList"></recommend>
@@ -21,7 +21,6 @@
     components: {homeHeader,HomeCarousel,HomeIcon,Recommend,Weekend},
     data(){
       return{
-        city:'',
         iconList: [],
         swiperList: [],
         recommendList: [],
@@ -34,11 +33,9 @@
           .then(this.init)
       },
       init: function (res) {
-        console.log(res)
         res = res.data
         if (res.ret === true && res.data) {
           var data = res.data
-          this.city = data.city;
           this.iconList = data.iconList
           this.swiperList = data.swiperList
           this.recommendList = data.recommendList

@@ -9,7 +9,7 @@
     </div>
     <router-link to="/city">
       <div class="header-right">
-        {{this.city}}
+        {{this.$store.state.city}}
         <span class="iconfont drop-icon">&#xe64a;</span>
       </div>
     </router-link>
@@ -18,15 +18,13 @@
 
 <script>
   export default {
-    name: "HomeHeader",
-    props: {
-      city: String
-    }
+    name: "HomeHeader"
   }
 </script>
 
 <style lang="stylus" scoped>
   @import "~styl/variables.styl"
+  @import "~styl/mixins.styl"
   /*1rem = html font-size = 50px
     例如两倍图： 86px/50*2 = 0.86rem
   */
@@ -56,6 +54,7 @@
       float right
       text-align center
       color #fff
+      ellipsis()
       .drop-icon
         margin-left -.04rem
         font-size .2rem

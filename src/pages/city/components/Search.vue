@@ -5,7 +5,7 @@
     </div>
     <div class="search-context" v-show="inputContext" ref="searchResults">
       <ul class="search-context-list">
-        <li class="search-item border-bottom" v-for="(item,index) of this.results">{{item.name}}</li>
+        <li class="search-item border-bottom" v-for="(item,index) of this.results" @click="selectCity(item.name)">{{item.name}}</li>
         <li class="search-item border-bottom" v-show="hasNoData">找不到相关数据</li>
       </ul>
     </div>
@@ -51,6 +51,12 @@
           }
           this.results = list;
         },100)
+      }
+    },
+    methods:{
+      selectCity(cityName){
+        this.$store.commit('initCity',cityName)
+        this.$router.push('/')
       }
     }
   }

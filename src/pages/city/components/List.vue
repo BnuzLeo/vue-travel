@@ -5,7 +5,7 @@
         <div class="title">当前城市</div>
         <div class="button-list border-topbottom">
           <div class="button-wrapper">
-            <div class="button">珠海</div>
+            <div class="button">{{this.$store.state.city}}</div>
           </div>
         </div>
       </div>
@@ -13,14 +13,14 @@
         <div class="title">热门城市</div>
         <div class="button-list border-topbottom">
           <div class="button-wrapper" v-for="(item,index) of hots" :key="index">
-            <div class="button">{{item.name}}</div>
+            <div class="button" @click="selectCity(item.name)">{{item.name}}</div>
           </div>
         </div>
       </div>
       <div class="area" v-for="(item,index) of lists" :key="index" :ref="index">
         <div class="title">{{index}}</div>
         <div class="item-list" v-for="(citieitems,index) of item" :key="index">
-          <div class="item border-bottom">
+          <div class="item border-bottom" @click="selectCity(citieitems.name)">
             {{citieitems.name}}
           </div>
         </div>
@@ -48,6 +48,12 @@
         if (itemElement) {
           this.scroll.scrollToElement(itemElement);
         }
+      }
+    },
+    methods:{
+      selectCity(cityName){
+        this.$store.dispatch('initCity',cityName)
+        this.$router.push('/')
       }
     }
   }
