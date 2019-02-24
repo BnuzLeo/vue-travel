@@ -15,13 +15,13 @@
   import Recommend from './components/Recommend'
   import Weekend from './components/Weekend'
   import axios from 'axios'
-  import { mapState } from 'vuex'
+  import {mapState} from 'vuex'
 
   export default {
     name: "Home",
-    components: {homeHeader,HomeCarousel,HomeIcon,Recommend,Weekend},
-    data(){
-      return{
+    components: {homeHeader, HomeCarousel, HomeIcon, Recommend, Weekend},
+    data() {
+      return {
         latestCity: '',
         iconList: [],
         swiperList: [],
@@ -29,9 +29,9 @@
         weekendList: []
       }
     },
-    methods:{
+    methods: {
       initHomeDate: function () {
-        axios.request('/api/index.json')
+        axios.request('/api/index.json?city=' + this.city)
           .then(this.init)
       },
       init: function (res) {
@@ -45,14 +45,14 @@
         }
       }
     },
-    computed:{
+    computed: {
       ...mapState(['city'])
     },
-    mounted(){
+    mounted() {
       this.initHomeDate();
       this.latestCity = this.city
     },
-    activated(){
+    activated() {
       /*actived是每次加载都会执行*/
       if (this.latestCity !== this.city) {
         this.latestCity = this.city
