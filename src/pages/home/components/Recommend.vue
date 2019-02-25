@@ -2,7 +2,12 @@
   <div>
     <div class="title">景点介绍</div>
     <ul>
-      <li class="item border-bottom" v-for="(item, index) of list">
+      <router-link
+        tag="li"
+        class="item border-bottom"
+        v-for="(item, index) of list"
+        :key="item.id"
+        :to="/detail/+item.id">
         <img :src="item.imgUrl"
              class="item-icon">
         <div class="item-info">
@@ -10,7 +15,7 @@
           <p class="item-desc">{{item.desc}}</p>
           <button class="item-btn">查看详情</button>
         </div>
-      </li>
+      </router-link>
     </ul>
   </div>
 </template>
