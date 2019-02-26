@@ -2,7 +2,7 @@
   <div>
     <div class="banner" @click="handleBannerclick">
       <img class="banner-img"
-           src="http://img1.qunarzz.com/sight/p0/1606/a0/a0854aa4dff05b84e2.img.jpg_600x330_d1dfb067.jpg">
+           src="http://img1.qunarzz.com/sight/p0/1503/52/52a78f6b50b84cd9.water.jpg_r_800x800_9a2effe6.jpg">
       <div class="banner-info">
         <div class="banner-title">
           珠海海上乐园，体验不一样的周末
