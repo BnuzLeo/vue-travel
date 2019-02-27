@@ -1,9 +1,9 @@
 <template>
   <div>
-    <router-link tag="div" class="header-abs" to="/" v-show="show">
+    <router-link tag="div" class="header-abs" to="/" v-show="!show">
       <div class="iconfont back-abs-icon">&#xe624;</div>
     </router-link>
-    <div class="header" v-show="!show" :style="opacityStyle">
+    <div class="header" v-show="show" :style="opacityStyle">
       城市选择
       <router-link to="/">
         <div class="iconfont header-back">&#xe624;</div>
@@ -30,10 +30,9 @@
           let opacity = top / 160
           opacity = opacity > 1 ? 1 : opacity
           this.opacityStyle = {opacity}
-          this.show = false
-        }else{
-          console.log("hihi")
           this.show = true
+        }else{
+          this.show = false
         }
       }
     },
