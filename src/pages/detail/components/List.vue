@@ -8,7 +8,7 @@
         {{item.title}}
       </div>
       <div v-if="item.children" class="item-children">
-        <list :list="item.children"></list>
+        <detail-list :list="item.children"></detail-list>
       </div>
     </div>
   </div>
@@ -16,7 +16,7 @@
 
 <script>
   export default {
-    name: "List",
+    name: "DetailList",
     props:{
       list: Array
     }

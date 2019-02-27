@@ -14,7 +14,7 @@
 
 <script>
   export default {
-    name: "Header",
+    name: "DetailHeader",
     data() {
       return {
         show: false,
@@ -63,6 +63,7 @@
       text-align center
 
   .header
+    z-index 2
     position fixed
     left 0
     top 0

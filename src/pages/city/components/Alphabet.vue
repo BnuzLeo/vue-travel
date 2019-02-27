@@ -18,7 +18,7 @@
 
 <script>
   export default {
-    name: "Alphabet",
+    name: "CityAlphabet",
     props: {
       lists: Object
     },

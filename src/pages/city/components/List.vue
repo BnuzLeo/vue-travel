@@ -34,7 +34,7 @@
   import {mapState,mapActions,mapMutations} from 'vuex'
 
   export default {
-    name: "List",
+    name: "CityList",
     props: {
       lists: Object,
       hots: Array,

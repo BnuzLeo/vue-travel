@@ -16,7 +16,7 @@
   import BSroll from 'better-scroll'
   import { mapMutations,mapGetters } from 'vuex'
   export default {
-    name: "Search",
+    name: "CitySearch",
     props: {
       cities: Object
     },
