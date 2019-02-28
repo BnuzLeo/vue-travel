@@ -41,7 +41,7 @@
         }
       }
     },
-    mounted(){
+    activated(){
       axios.get('/api/detail.json',{
         params:{
           id: this.$route.params.id
