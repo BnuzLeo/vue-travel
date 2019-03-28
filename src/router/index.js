@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from '@/pages/home/Home'
 import City from '@/pages/city/City.vue'
 import Detail from '@/pages/detail/Detail.vue'
+import Weekend from '@/pages/weekend/Weekend.vue'
 
 Vue.use(Router)
 
@@ -22,6 +23,11 @@ export default new Router({
       path: '/detail/:id',
       name: 'Detail',
       component: Detail
+    },
+    {
+      path: '/weekend/:id',
+      name: 'Weekend',
+      component: Weekend
     }
   ],scrollBehavior (to, from, savedPosition) {
     return { x: 0, y: 0 }

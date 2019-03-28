@@ -32,7 +32,7 @@
     },
     methods:{
       getCityData(){
-        axios.request('/api/city.json')
+        axios.request('/static/mock/city.json')
           .then(this.initData)
       },
       initData(res){

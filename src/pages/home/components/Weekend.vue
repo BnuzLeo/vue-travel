@@ -2,7 +2,12 @@
   <div>
     <div class="title">周末去哪玩</div>
     <ul>
-      <li class= "border-bottom" v-for="(item, index) of list">
+      <router-link
+        tag="li"
+        class="border-bottom"
+        v-for="(item, index) of list"
+        :key="item.id"
+        :to="/weekend/+item.id">
         <div class="item-icon-wrapper">
           <img :src="item.imgUrl"
                class="item-icon">
@@ -11,7 +16,7 @@
           <p class="item-title">{{item.title}}</p>
           <p class="item-desc">{{item.desc}}</p>
         </div>
-      </li>
+      </router-link>
     </ul>
   </div>
 </template>
@@ -19,7 +24,7 @@
 <script>
   export default {
     name: "HomeWeekend",
-    props:{
+    props: {
       list: Array
     }
   }
@@ -32,12 +37,14 @@
     margin-top .2rem
     line-height .6rem
     background-color: #eee
+
   .item-icon-wrapper
     overflow hidden
     height 0
     padding-bottom 33.9%
     .item-icon
       width 100%
+
   .item-info
     padding .1rem
     .item-title

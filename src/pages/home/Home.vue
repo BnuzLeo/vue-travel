@@ -31,7 +31,7 @@
     },
     methods: {
       initHomeDate: function () {
-        axios.request('/api/index.json?city=' + this.city)
+        axios.request('/static/mock/index.json?city=' + this.city)
           .then(this.init)
       },
       init: function (res) {
