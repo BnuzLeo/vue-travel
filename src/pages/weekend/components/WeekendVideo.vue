@@ -25,7 +25,7 @@
     data() {
       return {
         playerOptions: {
-          height: '360',
+          fluid: true,//宽占满全屏
           autoplay: true,
           muted: true,
           language: 'en',
@@ -86,13 +86,13 @@
       playerReadied(player) {
         // seek to 10s
         console.log('example player 1 readied', player)
-        player.currentTime(10)
+        player.currentTime(3)
         // console.log('example 01: the player is readied', player)
       }
     }
   }
 </script>
 
-<style scoped>
+<style scoped lang="stylus">
 
 </style>

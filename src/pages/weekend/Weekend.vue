@@ -15,6 +15,7 @@
   }
 </script>
 
-<style scoped>
-
+<style scoped lang="stylus">
+  .weekend
+    width 100%
 </style>
